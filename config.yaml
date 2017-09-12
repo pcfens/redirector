@@ -1,5 +1,4 @@
 ---
 bind_address: 0.0.0.0:8080
 redirects:
-  - https://gitlab.wm.edu/snippets/61/raw
-  # - rules.yaml
+  - rules.yaml

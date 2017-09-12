@@ -4,24 +4,24 @@
   targets:
   - target: https://somethingdifferent.com/
     code: 301
-- name: Revive My Vote
-  pattern: ^(www\.)?revivemyvote.com\/
+- name: Example
+  pattern: ^(www\.)?example.com\/
   targets:
-  - target: https://revivemyvote.wm.edu/
+  - target: https://example.university.edu/
     code: 301
 - name: TV
-  pattern: ^tv\.wm\.edu/
+  pattern: ^tv\.university\.edu/
   targets:
-  - target: https://contour.wm.edu
+  - target: https://contour.university.edu
     code: 302
     when:
       source:
-        - 128.239.0.0/16
+        - 10.0.0.0/8
         - 192.168.1.0/24
   - target: https://google.com
     code: 302
 - name: All to SSL
   pattern: ^(www\.)?(?P<name>[a-zA-Z0-9\-]+).com\/
   targets:
-  - target: https://${name}.wm.edu/
+  - target: https://${name}.university.edu/
     code: 301
