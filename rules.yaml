@@ -1,0 +1,27 @@
+---
+- name: Blah Test
+  pattern: ^(www\.)?blahblahblah.com\/
+  targets:
+  - target: https://somethingdifferent.com/
+    code: 301
+- name: Revive My Vote
+  pattern: ^(www\.)?revivemyvote.com\/
+  targets:
+  - target: https://revivemyvote.wm.edu/
+    code: 301
+- name: TV
+  pattern: ^tv\.wm\.edu/
+  targets:
+  - target: https://contour.wm.edu
+    code: 302
+    when:
+      source:
+        - 128.239.0.0/16
+        - 192.168.1.0/24
+  - target: https://google.com
+    code: 302
+- name: All to SSL
+  pattern: ^(www\.)?(?P<name>[a-zA-Z0-9\-]+).com\/
+  targets:
+  - target: https://${name}.wm.edu/
+    code: 301

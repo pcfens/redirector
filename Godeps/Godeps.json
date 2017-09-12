@@ -1,0 +1,56 @@
+{
+	"ImportPath": "github.com/pcfens/redirector",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v79",
+	"Deps": [
+		{
+			"ImportPath": "github.com/alexflint/go-cloudfile",
+			"Rev": "c247335ef4f3e333d279e029cc4f38dffd0e7ff2"
+		},
+		{
+			"ImportPath": "github.com/alexflint/go-cloudfile/httpfile",
+			"Rev": "c247335ef4f3e333d279e029cc4f38dffd0e7ff2"
+		},
+		{
+			"ImportPath": "github.com/alexflint/go-cloudfile/osfile",
+			"Rev": "c247335ef4f3e333d279e029cc4f38dffd0e7ff2"
+		},
+		{
+			"ImportPath": "github.com/alexflint/go-cloudfile/s3file",
+			"Rev": "c247335ef4f3e333d279e029cc4f38dffd0e7ff2"
+		},
+		{
+			"ImportPath": "github.com/mitchellh/goamz/aws",
+			"Rev": "caaaea8b30ee15616494ee68abd5d8ebbbef05cf"
+		},
+		{
+			"ImportPath": "github.com/mitchellh/goamz/s3",
+			"Rev": "caaaea8b30ee15616494ee68abd5d8ebbbef05cf"
+		},
+		{
+			"ImportPath": "github.com/sirupsen/logrus",
+			"Comment": "1.0.2-34-g181d419",
+			"Rev": "181d419aa9e2223811b824e8f0b4af96f9ba9302"
+		},
+		{
+			"ImportPath": "github.com/vaughan0/go-ini",
+			"Rev": "a98ad7ee00ec53921f08832bc06ecf7fd600e6a1"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/ssh/terminal",
+			"Rev": "b176d7def5d71bdd214203491f89843ed217f420"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "e42485b6e20ae7d2304ec72e535b103ed350cc02"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/windows",
+			"Rev": "e42485b6e20ae7d2304ec72e535b103ed350cc02"
+		},
+		{
+			"ImportPath": "gopkg.in/yaml.v2",
+			"Rev": "25c4ec802a7d637f88d584ab26798e94ad14c13b"
+		}
+	]
+}
