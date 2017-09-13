@@ -80,3 +80,8 @@ possible:
 Regular expressions are evaluated in the order they appear in the configuration
 file. You should consider having some sort of catch all resource at the bottom
 to prevent dead end 404s.
+
+### Reloading
+
+Redirect rules can be reloaded without restarting the application by sending
+an HTTP GET request to `/reload`.
