@@ -21,7 +21,7 @@ func main() {
 	configuration, err := config.LoadConfig(*configFile)
 
 	if err != nil {
-		log.Panic("Error reading configuration")
+		log.Panic("Error reading configuration: ", err)
 	}
 
 	http.HandleFunc("/", configuration.RedirectList.HTTPHandler)
