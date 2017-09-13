@@ -2,6 +2,8 @@ package config
 
 import (
 	"io/ioutil"
+	"os"
+	"strings"
 
 	"github.com/pcfens/redirector/redirects"
 
@@ -18,7 +20,11 @@ type Config struct {
 
 // LoadConfig reads the configuration and returns an instance of Config
 func LoadConfig(configFile string) (Config, error) {
-	var configuration Config
+	var configuration = Config{
+		BindAddress:    "0.0.0.0:8080",
+		IPHeader:       "X-Forwareded-For",
+		RedirectSource: []string{"rules.yaml"},
+	}
 	source, err := ioutil.ReadFile(configFile)
 	if err != nil {
 		return Config{}, err
@@ -27,6 +33,19 @@ func LoadConfig(configFile string) (Config, error) {
 	if err != nil {
 		return Config{}, err
 	}
+
+	if os.Getenv("BIND_ADDRESS") != "" {
+		configuration.BindAddress = os.Getenv("BIND_ADDRESS")
+	}
+
+	if os.Getenv("IP_HEADER") != "" {
+		configuration.IPHeader = os.Getenv("IP_HEADER")
+	}
+
+	if os.Getenv("REDIRECT_SOURCE") != "" {
+		configuration.RedirectSource = strings.Split(os.Getenv("REDIRECT_SOURCE"), ",")
+	}
+
 	configuration.RedirectList, err = redirects.LoadRedirects(configuration.RedirectSource)
 	if err != nil {
 		return Config{}, err
