@@ -85,3 +85,10 @@ to prevent dead end 404s.
 
 Redirect rules can be reloaded without restarting the application by sending
 an HTTP GET request to `/reload`.
+
+## Docker
+
+Everything should work well under Docker without having to modify the base
+image (using remote redirect rules with environment variables). An image is
+available on the hub at
+[pcfens/redirector](https://hub.docker.com/r/pcfens/redirector/tags/).
